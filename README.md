@@ -82,7 +82,7 @@ Global settings:
 
 Enable **Also sync tasks under tagged headings** below a calendar's
 **Obsidian tag** to automatically include tasks in a tagged section. The toggle
-is disabled by default. 
+is disabled by default.
 
 For example, with `#sync` chosen for the tag and the toggle enabled:
 
