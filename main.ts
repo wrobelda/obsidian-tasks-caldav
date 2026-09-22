@@ -496,6 +496,16 @@ class CalDAVSettingTab extends PluginSettingTab {
 				}));
 
 		new Setting(containerEl)
+			.setName('Also sync tasks under tagged headings')
+			.setDesc('Include tasks whose immediately preceding heading contains the configured Obsidian tag.')
+			.addToggle(toggle => toggle
+				.setValue(calendar.syncHeadingTags ?? false)
+				.onChange(async value => {
+					calendar.syncHeadingTags = value;
+					await this.plugin.saveSettings();
+				}));
+
+		new Setting(containerEl)
 			.setName('Server category')
 			.setDesc("Only server tasks with this category are pulled into Obsidian. Leave empty to pull every task (useful when some clients — such as the iOS reminders app — can't set categories).")
 			.addText(text => text
